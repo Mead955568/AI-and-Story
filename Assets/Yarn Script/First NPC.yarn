@@ -2,4 +2,15 @@
 tags:
 ---
 
+ <<declare $Religion = 0>>
+ <<declare $People = 0>>
+ <<declare $Noble = 0>>
+ <<declare $Merchent = 0>>
+
+
+Welcome to this Basic Script idea. #line:0dc8671 
+
+I hope that this works this time. #line:0ce4532 
+
+<<set $People to $People + 1>>
 ===
