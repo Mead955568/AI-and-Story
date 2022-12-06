@@ -2,15 +2,40 @@
 tags:
 ---
 
- <<declare $Religion = 0>>
- <<declare $People = 0>>
- <<declare $Noble = 0>>
- <<declare $Merchent = 0>>
+<<declare $Religion=0>>
+<<declare $People=0>> 
+<<declare $Noble=0>>
+<<declare $Merchent=0>>
 
+The once great kingdom of Durnar was a thriving and prosperous land, known throughout the world for its beauty and wealth. But now, the kingdom finds itself on the brink of collapse. The once mighty rulers of Durnar, the royal family, have grown corrupt and weak, unable to defend the kingdom against its enemies. In the north, the barbarian tribes are growing restless and threatening to invade, while in the south, rival kingdoms are eyeing Durnar's territory with greedy eyes. The people of Durnar are beginning to lose hope, and many fear that the kingdom's downfall is imminent. It up to you the last Ruler of Dunar to try and save your kingdom from the brink of collapse. YOU MUST REMEMBER YOUR CHOICES MATTER! #line:05451df 
+<<jump FirstGuy>>
+===
+title: FirstGuy
+---
+Master of Ceremonies: Your Majesty, I present Lord Graiton. #line:0874cf8 
+Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our northen farms how do you with to compat this problem. #line:01428b0 
 
-Welcome to this Basic Script idea. #line:0dc8671 
+-> Send soilders #line:0c14af3 
+    Ruler: lol send soilders #line:04ebd56 
+    <<set $Noble += 1>>
+    <<set $People -= 1>>
+    <<jump SecondGuy>>
 
-I hope that this works this time. #line:0ce4532 
+-> um #line:081efcc 
 
-<<set $People to $People + 1>>
+-> lol #line:0cc4bbc 
+
+-> wow #line:07998bb 
+
+===
+title: SecondGuy
+---
+
+===
+title:ThirdGuy
+---
+
+===
+title: FourthGuy
+---
 ===
