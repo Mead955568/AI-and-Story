@@ -24,7 +24,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $People-=1>>
     <<set $Merchent+=1>>
     <<set $HappyWalk to true>>
-    <<jump SecondGuy>>
+
 
 -> negotiate a peace treaty with the barbarian tribe #line:081efcc 
     Ruler: We shall send an envoy party to meet with the barbarian chief in order to stop this bloodshed. #line:09326ec 
@@ -33,7 +33,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $Merchent-=1>>
     <<set $People-=1>>
      <<set $AngryWalk to true>>
-    <<jump SecondGuy>>
+
 
 ->  launch a pre-emptive strike against the barbarians #line:0cc4bbc 
     Ruler: We shall hire mercenaries and launch a pre-emptive strike against the barbarians in order to weaken their forces #line:0aeb46d 
@@ -42,7 +42,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $Merchent+=1>>
     <<set $People+=1>>
      <<set $HappyWalk to true>>
-    <<jump SecondGuy>>
+
 
 ===
 
