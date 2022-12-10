@@ -15,6 +15,8 @@ public class YarnInteractable : MonoBehaviour
     private float defaultIndicatorIntensity;
     public Animator animator;
 
+
+
     public void Start()
     {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();

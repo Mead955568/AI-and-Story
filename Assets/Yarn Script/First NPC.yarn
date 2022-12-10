@@ -6,9 +6,18 @@ tags:
 <<declare $People=0>> 
 <<declare $Noble=0>>
 <<declare $Merchent=0>>
+
 <<declare $HappyWalk to false>>
 <<declare $AngryWalk to false>>
+<<declare $AngryClap to false>>
+
+<<declare $HappyClap to false>>
+<<declare $GoodClap to false>>
+
 <<declare $Start1 to false>>
+<<declare $Start2 to false>>
+<<declare $Start3 to false>>
+
 
 The once great kingdom of Durnar was a thriving and prosperous land, known throughout the world for its beauty and wealth. But now, the kingdom finds itself on the brink of collapse. The once mighty rulers of Durnar, the royal family, have grown corrupt and weak, unable to defend the kingdom against its enemies. In the north, the barbarian tribes are growing restless and threatening to invade, while in the south, rival kingdoms are eyeing Durnar's territory with greedy eyes. The people of Durnar are beginning to lose hope, and many fear that the kingdom's downfall is imminent. It up to you the last Ruler of Dunar to try and save your kingdom from the brink of collapse. YOU MUST REMEMBER YOUR CHOICES MATTER! #line:05451df 
 <<set $Start1 to true>>
@@ -42,13 +51,17 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
 
 ->  launch a pre-emptive strike against the barbarians #line:0cc4bbc 
     Ruler: We shall hire mercenaries and launch a pre-emptive strike against the barbarians in order to weaken their forces #line:0aeb46d 
-    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Nobles.
-    <<set $Noble-=1>>
+    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Church.
+    <<set $Noble+=1>>
     <<set $Religion-=1>>
     <<set $Merchent+=1>>
     <<set $People+=1>>
     <<set $HappyWalk to true>>
 
+<<CheckYarnVariable Knight>>
+
+<<set $Start2  to true>>
+<<CheckYarnVariable OldMan>>
 //<<CheckYarnVariable ScriptHolder>>
 ===
 
@@ -81,7 +94,8 @@ Mayor of Burton: Your majesty, our last two harvestest have failed can you pleas
     <<set $Merchent-=1>>
     <<set $People+=1>>
 
-
+<<set $Start3 to true>>
+<<CheckYarnVariable PMan>>
 ===
 title:ThirdGuy
 ---
