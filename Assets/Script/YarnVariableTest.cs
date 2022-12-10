@@ -5,8 +5,8 @@ using Yarn.Unity;
 
 public class YarnVariableTest : MonoBehaviour
 {
-    public float NobleNumberYarn;
-    public InMemoryVariableStorage yarnInMemoryStorage;
+    //public float NobleNumberYarn;
+    //public InMemoryVariableStorage yarnInMemoryStorage;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class YarnVariableTest : MonoBehaviour
         
 
     }
-    [YarnCommand("CheckYarnVariable")]
-    public void CheckYarnVariable()
-    {
-        yarnInMemoryStorage.TryGetValue("$Noble", out NobleNumberYarn);
-        Debug.Log(NobleNumberYarn);
-    }
+    //[YarnCommand("CheckYarnVariable")]
+    //public void CheckYarnVariable()
+    //{
+    //    yarnInMemoryStorage.TryGetValue("$Noble", out NobleNumberYarn);
+    //    Debug.Log(NobleNumberYarn);
+    //}
 }
