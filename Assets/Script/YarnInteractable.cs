@@ -13,6 +13,7 @@ public class YarnInteractable : MonoBehaviour
     private bool interactable = true;
     private bool isCurrentConversation = false;
     private float defaultIndicatorIntensity;
+    public Animator animator;
 
     public void Start()
     {
@@ -24,6 +25,7 @@ public class YarnInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            animator.SetBool("StopWalking", true);
             Debug.Log("StartConvo");
             if (interactable && !dialogueRunner.IsDialogueRunning)
             {
@@ -45,7 +47,8 @@ public class YarnInteractable : MonoBehaviour
         if (isCurrentConversation)
         {
             isCurrentConversation = false;
-            Debug.Log($"Started conversation with {name}.");
+            Debug.Log($"Ended conversation with {name}.");
+            animator.SetBool("Leave", true);
         }
     }
 

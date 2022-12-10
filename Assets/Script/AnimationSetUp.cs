@@ -32,11 +32,12 @@ public class AnimationSetUp : MonoBehaviour
         }
       
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("StopWalking");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        animator.SetBool("StopWalking", true);
+    //    }
+    //}
 }
