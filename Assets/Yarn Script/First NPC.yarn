@@ -9,8 +9,8 @@ tags:
 
 <<declare $HappyWalk to false>>
 <<declare $AngryWalk to false>>
-<<declare $AngryClap to false>>
 
+<<declare $AngryClap to false>>
 <<declare $HappyClap to false>>
 <<declare $GoodClap to false>>
 
@@ -37,7 +37,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $People-=1>>
     <<set $Merchent+=1>>
     <<set $HappyWalk to true>>
-
+    <<set $AngryClap to true>>
 
 -> negotiate a peace treaty with the barbarian tribe #line:081efcc 
     Ruler: We shall send an envoy party to meet with the barbarian chief in order to stop this bloodshed. #line:09326ec 
@@ -47,6 +47,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $Merchent-=1>>
     <<set $People-=1>>
     <<set $AngryWalk to true>>
+    <<set $GoodClap to true>>
 
 
 ->  launch a pre-emptive strike against the barbarians #line:0cc4bbc 
@@ -57,8 +58,11 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $Merchent+=1>>
     <<set $People+=1>>
     <<set $HappyWalk to true>>
+    <<set $HappyClap to true>>
 
 <<CheckYarnVariable Knight>>
+
+<<wait 3>>
 
 <<set $Start2  to true>>
 <<CheckYarnVariable OldMan>>
@@ -67,8 +71,11 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
 
 title: SecondGuy
 ---
-
-
+    <<set $HappyWalk to false>>
+    <<set $AngryWalk to false>>
+    <<set $HappyClap to false>>
+    <<set $AngryClap to false>>
+    <<set $GoodClap to false>>
 
 Master of Ceremonies: Your Majesty, I present the Mayor of Burton #line:043927a 
 Mayor of Burton: Your majesty, our last two harvestest have failed can you please help us? #line:04c8416 
