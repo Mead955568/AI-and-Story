@@ -12,7 +12,7 @@ tags:
 
 <<declare $AngryClap to false>>
 <<declare $HappyClap to false>>
-<<declare $GoodClap to false>>
+<<declare $OkClap to false>>
 
 <<declare $Start1 to false>>
 <<declare $Start2 to false>>
@@ -47,7 +47,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $Merchent-=1>>
     <<set $People-=1>>
     <<set $AngryWalk to true>>
-    <<set $GoodClap to true>>
+    <<set $OkClap to true>>
 
 
 ->  launch a pre-emptive strike against the barbarians #line:0cc4bbc 
@@ -61,11 +61,12 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $HappyClap to true>>
 
 <<CheckYarnVariable Knight>>
+<<CheckYarnVariable CrowdG>>
+<<CheckYarnVariable CrowdM>>
 
-<<wait 3>>
 
-<<set $Start2  to true>>
-<<CheckYarnVariable OldMan>>
+ <<set $Start2  to true>>
+ <<CheckYarnVariable OldMan>>
 //<<CheckYarnVariable ScriptHolder>>
 ===
 
@@ -75,39 +76,86 @@ title: SecondGuy
     <<set $AngryWalk to false>>
     <<set $HappyClap to false>>
     <<set $AngryClap to false>>
-    <<set $GoodClap to false>>
+    <<set $OkClap to false>>
 
-Master of Ceremonies: Your Majesty, I present the Mayor of Burton #line:043927a 
+    <<CheckYarnVariable CrowdG>>
+    <<CheckYarnVariable CrowdM>>
+    <<wait 5>>
+ Your Majesty, I present the Mayor of Burton #line:043927a 
 Mayor of Burton: Your majesty, our last two harvestest have failed can you please help us? #line:04c8416 
 
 ->Import food from neighbouring countries  #line:0c901ad 
-    Ruler:
+    Ruler: We shall import food into the country to deal with this ongoing famine.
+    Mayor of Burton: Thank you your Majesty.
     <<set $Noble-=1>>
     <<set $Religion-=1>>
-    <<set $Merchent-=1>>
+    <<set $Merchent+=1>>
     <<set $People+=1>>
+    <<set $OkClap to true>>
+    <<set $HappyWalk to true>>
 
-->2 #line:05c599d 
-    Ruler:
-    <<set $Noble-=1>>
-    <<set $Religion-=1>>
-    <<set $Merchent-=1>>
-    <<set $People+=1>>
 
-->3 #line:01db2b7 
-    Ruler:
-    <<set $Noble-=1>>
-    <<set $Religion-=1>>
+->Give food from the Noble storages to the People #line:05c599d 
+    Ruler: We shall use the grain storage from the areas not currently affected by the famine.
+    Mayor of Burton: Thank you your Majesty.
+    <<set $Noble-=2>>
+    <<set $Religion+=1>>
     <<set $Merchent-=1>>
     <<set $People+=1>>
+    <<set $HappyClap to true>>
+    <<set $AngryWalk to true>>
+
+
+->Do nothing #line:01db2b7 
+    Ruler: We do not have the resources to solve this problem.
+    Mayor of Burton: I understand your Majestry, i'll try my best to explain this to the people.
+    <<set $Noble+=1>>
+    <<set $Religion-=1>>
+    <<set $Merchent-=1>>
+    <<set $People-=2>>
+    <<set $AngryClap to true>>
+    <<set $HappyWalk to true>>
+
+<<CheckYarnVariable OldMan>>
+<<CheckYarnVariable CrowdG>>
+<<CheckYarnVariable CrowdM>>
 
 <<set $Start3 to true>>
 <<CheckYarnVariable PMan>>
 ===
 title:ThirdGuy
 ---
+<<set $HappyWalk to false>>
+<<set $AngryWalk to false>>
+<<set $HappyClap to false>>
+<<set $AngryClap to false>>
+<<set $OkClap to false>>
 
+ <<CheckYarnVariable CrowdG>>
+ <<CheckYarnVariable CrowdM>>
+ <<wait 5>>
+
+Master of Ceremonies:
+
+
+lol xd
+
+->1
+
+->2
+
+->3
+
+
+<<CheckYarnVariable PMan>>
+<<CheckYarnVariable CrowdG>>
+<<CheckYarnVariable CrowdM>>
+<<wait 5>>
+    <<jump Ending>>
 ===
-title: FourthGuy
+title: Ending
 ---
+
+
+
 ===

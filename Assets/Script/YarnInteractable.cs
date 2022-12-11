@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
+//This is a script to run the dialog when the NPC walks up too the User
+
 public class YarnInteractable : MonoBehaviour
 {
     // internal properties exposed to editor

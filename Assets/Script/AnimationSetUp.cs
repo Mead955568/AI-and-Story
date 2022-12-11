@@ -34,8 +34,6 @@ public class AnimationSetUp : MonoBehaviour
     public void CheckYarnVariable()
     {
 
-            animator.SetBool("ok",true);
-
         yarnInMemoryStorage.TryGetValue("$Start1", out Start1);
         if (Start1 == true)
         {
@@ -79,35 +77,52 @@ public class AnimationSetUp : MonoBehaviour
           if (AngryCrowd == true)
           {
             Debug.Log(AngryCrowd);
+            animator.SetBool("Stop", false);
             animator.SetBool("Angry", true);
-            StartCoroutine(Delay(_time));
+            StartCoroutine(Delay1(_time));
         }
-         yarnInMemoryStorage.TryGetValue("$GoodClap", out OkCrowd);
+        yarnInMemoryStorage.TryGetValue("$OkClap", out OkCrowd);
 
-         if (OkCrowd == true)
-          {
+        if (OkCrowd == true)
+        {
             Debug.Log(OkCrowd);
-            //animator.SetBool("ok", true);
-            //StartCoroutine(Delay(_time));
-            //animator.SetBool("ok", false);
-            //animator.SetBool("Stop", true);
+            animator.SetBool("Stop", false);
+            animator.SetBool("ok", true);
+            StartCoroutine(Delay2(_time));
         }
-        //private void OnTriggerEnter(Collider other)
-        //{
-        //    Debug.Log("StopWalking");
-        //    if (other.CompareTag("Player"))
-        //    {
-        //        animator.SetBool("StopWalking", true);
-        //    }
-        //}
+        yarnInMemoryStorage.TryGetValue("$HappyClap", out HappyCrowd);
 
+        if (HappyCrowd == true)
+        {
+            Debug.Log(HappyCrowd);
+            animator.SetBool("Stop", false);
+            animator.SetBool("Good", true);
+            StartCoroutine(Delay3(_time));
+        }
     }
     private Renderer _renderer;
-    [SerializeField] private float _time = 3f;
+    [SerializeField] private float _time = 10f;
 
-    public IEnumerator Delay(float t)
+    public IEnumerator Delay1(float t)
     {
         yield return new WaitForSeconds(t);
+
+        animator.SetBool("Angry", false);
+        animator.SetBool("Stop", true);
+    }
+    public IEnumerator Delay2(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        animator.SetBool("ok", false);
+        animator.SetBool("Stop", true);
+    }
+    public IEnumerator Delay3(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        animator.SetBool("Good", false);
+        animator.SetBool("Stop", true);
     }
 }
 
