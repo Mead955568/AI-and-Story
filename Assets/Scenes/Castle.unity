@@ -48337,6 +48337,7 @@ GameObject:
   - component: {fileID: 1273331016}
   - component: {fileID: 1273331015}
   - component: {fileID: 1273331014}
+  - component: {fileID: 1273331017}
   m_Layer: 0
   m_Name: CanvasBlack
   m_TagString: Untagged
@@ -48426,6 +48427,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1273331017
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273331012}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1312296902
 GameObject:
   m_ObjectHideFlags: 0
@@ -52057,6 +52070,7 @@ GameObject:
   - component: {fileID: 1849196409}
   - component: {fileID: 1849196408}
   - component: {fileID: 1849196407}
+  - component: {fileID: 1849196410}
   m_Layer: 0
   m_Name: CanvasWin
   m_TagString: Untagged
@@ -52146,6 +52160,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1849196410
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849196405}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1850154966
 GameObject:
   m_ObjectHideFlags: 0
@@ -66192,6 +66218,7 @@ GameObject:
   - component: {fileID: 1985221414}
   - component: {fileID: 1985221413}
   - component: {fileID: 1985221412}
+  - component: {fileID: 1985221415}
   m_Layer: 0
   m_Name: CanvasRuin
   m_TagString: Untagged
@@ -66281,6 +66308,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1985221415
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985221410}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1986580576
 GameObject:
   m_ObjectHideFlags: 0
