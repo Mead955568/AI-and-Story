@@ -27,6 +27,7 @@ public class YarnInteractable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //This is to make the NPC react when they get close to the player
         if (other.CompareTag("Player"))
         {
             animator.SetBool("StopWalking", true);

@@ -31,7 +31,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
 
 -> Build fortifications and train soilders #line:0c14af3 
     Ruler: We are going to defend ourselves against these savage barbarians by building a great wall, and by training and arming our citizens for battle. #line:04ebd56 
-    Lord Graiton: As you wish your Majesty.
+    Lord Graiton: As you wish your Majesty. #line:0a29eff 
     <<set $Noble+=1>>
     <<set $Religion-=1>>
     <<set $People-=1>>
@@ -41,7 +41,7 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
 
 -> negotiate a peace treaty with the barbarian tribe #line:081efcc 
     Ruler: We shall send an envoy party to meet with the barbarian chief in order to stop this bloodshed. #line:09326ec 
-    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Nobles.
+    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Nobles. #line:0c397aa 
     <<set $Noble-=1>>
     <<set $Religion+=1>>
     <<set $Merchent-=1>>
@@ -49,10 +49,9 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $AngryWalk to true>>
     <<set $OkClap to true>>
 
-
 ->  launch a pre-emptive strike against the barbarians #line:0cc4bbc 
     Ruler: We shall hire mercenaries and launch a pre-emptive strike against the barbarians in order to weaken their forces #line:0aeb46d 
-    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Church.
+    Lord Graiton: As you wish your Majesty, but be warned this will not be populer with the Church. #line:057da6f 
     <<set $Noble+=1>>
     <<set $Religion-=1>>
     <<set $Merchent+=1>>
@@ -60,13 +59,14 @@ Lord Graiton: Your Majesty, there has been an imflux of Barbarians raiding our n
     <<set $HappyWalk to true>>
     <<set $HappyClap to true>>
 
+//Checking the NPC for annimation script
+
 <<CheckYarnVariable Knight>>
 <<CheckYarnVariable CrowdG>>
 <<CheckYarnVariable CrowdM>>
 
-
- <<set $Start2  to true>>
- <<CheckYarnVariable OldMan>>
+<<set $Start2 to true>>
+<<CheckYarnVariable OldMan>>
 //<<CheckYarnVariable ScriptHolder>>
 ===
 
@@ -78,15 +78,17 @@ title: SecondGuy
     <<set $AngryClap to false>>
     <<set $OkClap to false>>
 
+    //This resets the script for new decisions
+    
     <<CheckYarnVariable CrowdG>>
     <<CheckYarnVariable CrowdM>>
     <<wait 5>>
- Your Majesty, I present the Mayor of Burton #line:043927a 
+Master of Ceremonies: Your Majesty, I present the Mayor of Burton #line:043927a 
 Mayor of Burton: Your majesty, our last two harvestest have failed can you please help us? #line:04c8416 
 
 ->Import food from neighbouring countries  #line:0c901ad 
-    Ruler: We shall import food into the country to deal with this ongoing famine.
-    Mayor of Burton: Thank you your Majesty.
+    Ruler: We shall import food into the country to deal with this ongoing famine. #line:0464c29 
+    Mayor of Burton: Thank you your Majesty. #line:08263a4 
     <<set $Noble-=1>>
     <<set $Religion-=1>>
     <<set $Merchent+=1>>
@@ -94,10 +96,9 @@ Mayor of Burton: Your majesty, our last two harvestest have failed can you pleas
     <<set $OkClap to true>>
     <<set $HappyWalk to true>>
 
-
 ->Give food from the Noble storages to the People #line:05c599d 
-    Ruler: We shall use the grain storage from the areas not currently affected by the famine.
-    Mayor of Burton: Thank you your Majesty.
+    Ruler: We shall use the grain storage from the areas not currently affected by the famine. #line:072301f 
+    Mayor of Burton: Thank you your Majesty. #line:020ae32 
     <<set $Noble-=2>>
     <<set $Religion+=1>>
     <<set $Merchent-=1>>
@@ -107,15 +108,16 @@ Mayor of Burton: Your majesty, our last two harvestest have failed can you pleas
 
 
 ->Do nothing #line:01db2b7 
-    Ruler: We do not have the resources to solve this problem.
-    Mayor of Burton: I understand your Majestry, i'll try my best to explain this to the people.
+    Ruler: We do not have the resources to solve this problem. #line:034fdf7 
+    Mayor of Burton: I understand your Majestry, i'll try my best to explain this to the people. #line:0025087 
     <<set $Noble+=1>>
     <<set $Religion-=1>>
     <<set $Merchent-=1>>
     <<set $People-=2>>
     <<set $AngryClap to true>>
-    <<set $HappyWalk to true>>
+    <<set $AngryWalk to true>>
 
+//Checking the NPC for annimation script
 <<CheckYarnVariable OldMan>>
 <<CheckYarnVariable CrowdG>>
 <<CheckYarnVariable CrowdM>>
@@ -131,31 +133,79 @@ title:ThirdGuy
 <<set $AngryClap to false>>
 <<set $OkClap to false>>
 
- <<CheckYarnVariable CrowdG>>
+//This resets the script for new decisions
+
+<<CheckYarnVariable CrowdG>>
  <<CheckYarnVariable CrowdM>>
  <<wait 5>>
 
-Master of Ceremonies:
+Master of Ceremonies: Your Majesty I present a Representive of a the Southen refugees #line:01b6675 
+Representive: Your Majest due to all the conflict happening within the southern Kingdoms, we hope that we can emigrate to your great nation to start our lives anew. #line:060a422 
 
+->Allow all the Migrants into the country #line:0ee56fc 
+    Ruler: I Understand the problems that are facing your people, as such we will allow all of you to stay and rebuild your lives. #line:05e4ea9 
+    Representive: Thank so much your Majesty. #line:0b2371f 
+    <<set $Noble-=1>>
+    <<set $Religion+=2>>
+    <<set $Merchent-=1>>
+    <<set $People+=2>>
+    <<set $HappyWalk to true>>
+    <<set $HappyClap to true>>
 
-lol xd
+->Allow only the women and children into the country #line:0260fd8 
+    Ruler: I Understand the problems that are facing your people, but we do not have the resourses to take in all your people so only the women and children can stay. #line:0620a25 
+    Representive: Thank you your Majesty, we understand your decison.  #line:01bca39 
+    <<set $Noble-=1>>
+    <<set $Religion+=1>>
+    <<set $Merchent-=1>>
+    <<set $People+=1>>
+    <<set $HappyWalk to true>>
+    <<set $OkClap to true>>
 
-->1
+->Send the Migrants back where they came from #line:08ca7a0 
+    Ruler: I Understand the problems that are facing your people, but we do not have the ability to take your people in. #line:01cfea9 
+    Representive: Oh I see, well thank you for this audience your Majesty. #line:05e7e87 
+    <<set $Noble+=1>>
+    <<set $Religion-=2>>
+    <<set $Merchent+=1>>
+    <<set $People-=2>>
+    <<set $AngryWalk to true>>
+    <<set $AngryClap to true>>
 
-->2
-
-->3
-
-
+//Checking the NPC for annimation script
 <<CheckYarnVariable PMan>>
 <<CheckYarnVariable CrowdG>>
 <<CheckYarnVariable CrowdM>>
-<<wait 5>>
-    <<jump Ending>>
+
+<<jump Ending>>
 ===
 title: Ending
 ---
+<<set $HappyWalk to false>>
+<<set $AngryWalk to false>>
+<<set $HappyClap to false>>
+<<set $AngryClap to false>>
+<<set $OkClap to false>>
 
+<<wait 5>>
 
+//This is now the final part of scene deciding what ending you get based on your choices.
 
+<<if $Noble<-2>>
+    Due to how you ruled a group of nobles have grown tired of being ruled by an ineffective monarch. They had long whispered about overthrowing the ruler and seizing power for themselves, and finally decided to act on their plans. #line:02fa567 
+<<else>>
+    <<if $Religion<-2>>
+        Due to how you ruled the church has grown powerful and influential in the kingdom, with a large following of devoted believers. The church leaders, seeing the suffering of the people and the corruption of the monarch the church leaders declared a holy war against the corrupt ruler, calling on the people to rise up and overthrow their oppressor. #line:0328646 
+    <<else>>
+        <<if $Merchent<-2>>
+           Due to how you ruled a merchant had grown rich and powerful through his successful trade ventures, allowing him to use his wealth and connections to win over the support of other powerful figures in the city, such as other wealthy merchants, influential nobles, and members of the ruling council. With his new found power the merchant declared himself the rightful ruler of the Kingdom, and called on the people to rise up and overthrow the corrupt monarch. #line:01e5611 
+        <<else>>
+            <<if $People<-2>>
+                Due to how you ruled the peasants have grown tired of the harsh treatment and oppression they have suffered at the hands of the ruling nobles and monarch. As such have started a rebelion and the rebels began to launch bold attacks on the ruling class, striking at their strongholds and taking back control of the kingdom. The nobles and the monarch, caught by surprise, were powerless to stop the rebels, and soon, the kingdom was under their control. #line:09cd6fd 
+            <<else>>
+                Due to your careful choices you have saved your Kingdom from the brink of collapse, and have avoided the current crisis ploughing the lands and can now dream for a better tomorrow. #line:0dcdfea 
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<endif>>
 ===

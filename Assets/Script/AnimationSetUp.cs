@@ -33,33 +33,24 @@ public class AnimationSetUp : MonoBehaviour
     [YarnCommand("CheckYarnVariable")]
     public void CheckYarnVariable()
     {
-
-        yarnInMemoryStorage.TryGetValue("$Start1", out Start1);
-        if (Start1 == true)
+        //This part is for making the NPC start the convo and activating annimation
+        if (yarnInMemoryStorage.TryGetValue("$Start1", out Start1) && Start1 == true)
         {
             Debug.Log(Start1);
             animator.SetBool("StartWalking", true);
         }
-        if (animator.GetBool("Leave") == true)
+        if (animator.GetBool("Leave") == true && yarnInMemoryStorage.TryGetValue("$Start2", out Start2) && Start2 == true)
         {
-            yarnInMemoryStorage.TryGetValue("$Start2", out Start2);
-            if (Start2 == true)
+            Debug.Log(Start2);
+            animator.SetBool("StartWalking", true);
+            if (animator.GetBool("Leave") == true && yarnInMemoryStorage.TryGetValue("$Start3", out Start3) && Start3 == true)
             {
-                Debug.Log(Start2);
+                Debug.Log(Start3);
                 animator.SetBool("StartWalking", true);
-                if (animator.GetBool("Leave") == true)
-                {
-                    yarnInMemoryStorage.TryGetValue("$Start3", out Start3);
-                    if (Start3 == true)
-                    {
-                        Debug.Log(Start3);
-                        animator.SetBool("StartWalking", true);
-                    }
-                }
             }
         }
-
-          yarnInMemoryStorage.TryGetValue("$HappyWalk", out HappyWalk);
+        //This is about how the NPC leave the convo and annimation
+        yarnInMemoryStorage.TryGetValue("$HappyWalk", out HappyWalk);
           if (HappyWalk == true)
           {
             Debug.Log(HappyWalk);
@@ -74,6 +65,7 @@ public class AnimationSetUp : MonoBehaviour
           }
           yarnInMemoryStorage.TryGetValue("$AngryClap", out AngryCrowd);
 
+        //This part is about how the Crowd NPC react and annimation
           if (AngryCrowd == true)
           {
             Debug.Log(AngryCrowd);
@@ -102,7 +94,7 @@ public class AnimationSetUp : MonoBehaviour
     }
     private Renderer _renderer;
     [SerializeField] private float _time = 10f;
-
+    //This is a delay system for the Crowds
     public IEnumerator Delay1(float t)
     {
         yield return new WaitForSeconds(t);
