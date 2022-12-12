@@ -212,7 +212,7 @@ title: Ending
             <<if $People<-2>>
                 Due to how you ruled the peasants have grown tired of the harsh treatment and oppression they have suffered at the hands of the ruling nobles and monarch. As such have started a rebelion and the rebels began to launch bold attacks on the ruling class, striking at their strongholds and taking back control of the kingdom. The nobles and the monarch, caught by surprise, were powerless to stop the rebels, and soon, the kingdom was under their control. #line:09cd6fd 
             <<else>>
-                Due to your careful choices you have saved your Kingdom from the brink of collapse, and have avoided the current crisis ploughing the lands and can now dream for a better tomorrow. #line:0dcdfea 
+                Due to your careful choices you have saved your Kingdom from the brink of collapse, and have avoided the current crisis plaguing the lands and can now dream for a better tomorrow. #line:0dcdfea 
             <<endif>>
         <<endif>>
     <<endif>>

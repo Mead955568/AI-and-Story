@@ -141,7 +141,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: -7385174762486790625, guid: 8fdb04a71506d0b4b82c5110f6906289, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -1460473585376196997, guid: 8fdb04a71506d0b4b82c5110f6906289, type: 2}
   - {fileID: 11400000, guid: e44921e389440d24089a5505948810ad, type: 2}
   - {fileID: 0}
   metroInputSource: 0
@@ -164,7 +168,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.JamesCompany.AiandStory
-    Standalone: com.UnityTechnologies.com.unity.template-starter-kit
+    Standalone: com.JamesCompany.Ai-and-Story
   buildNumber:
     Standalone: 0
     iPhone: 0
