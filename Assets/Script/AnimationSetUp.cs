@@ -5,6 +5,8 @@ using Yarn.Unity;
 
 public class AnimationSetUp : MonoBehaviour
 {
+    //This is a script to annimate the interactable NPCs
+
     public Animator animator;
 
     public bool Start1;
@@ -47,6 +49,9 @@ public class AnimationSetUp : MonoBehaviour
             {
                 Debug.Log(Start3);
                 animator.SetBool("StartWalking", true);
+
+                //animator.Play("Right Turn");
+                animator.SetBool("Leave", true);
             }
         }
         //This is about how the NPC leave the convo and annimation
@@ -55,14 +60,15 @@ public class AnimationSetUp : MonoBehaviour
           {
             Debug.Log(HappyWalk);
             animator.SetBool("HappyWalking", true);
-
+            StartCoroutine(Delay4(_time));
         }
           yarnInMemoryStorage.TryGetValue("$AngryWalk", out SadWalk);
           if (SadWalk == true)
           {
             Debug.Log(SadWalk);
             animator.SetBool("SadWalking", true);
-          }
+            StartCoroutine(Delay5(_time));
+        }
           yarnInMemoryStorage.TryGetValue("$AngryClap", out AngryCrowd);
 
         //This part is about how the Crowd NPC react and annimation
@@ -115,6 +121,18 @@ public class AnimationSetUp : MonoBehaviour
 
         animator.SetBool("Good", false);
         animator.SetBool("Stop", true);
+    }
+    public IEnumerator Delay4(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        animator.SetBool("HappyWalking", false);
+    }
+    public IEnumerator Delay5(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        animator.SetBool("SadWalking", false);
     }
 }
 

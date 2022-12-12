@@ -151,6 +151,9 @@ Representive: Your Majest due to all the conflict happening within the southern 
     <<set $People+=2>>
     <<set $HappyWalk to true>>
     <<set $HappyClap to true>>
+    <<CheckYarnVariable PMan>>
+    <<CheckYarnVariable CrowdG>>
+    <<CheckYarnVariable CrowdM>>
 
 ->Allow only the women and children into the country #line:0260fd8 
     Ruler: I Understand the problems that are facing your people, but we do not have the resourses to take in all your people so only the women and children can stay. #line:0620a25 
@@ -161,6 +164,9 @@ Representive: Your Majest due to all the conflict happening within the southern 
     <<set $People+=1>>
     <<set $HappyWalk to true>>
     <<set $OkClap to true>>
+    <<CheckYarnVariable PMan>>
+    <<CheckYarnVariable CrowdG>>
+    <<CheckYarnVariable CrowdM>>
 
 ->Send the Migrants back where they came from #line:08ca7a0 
     Ruler: I Understand the problems that are facing your people, but we do not have the ability to take your people in. #line:01cfea9 
@@ -171,11 +177,14 @@ Representive: Your Majest due to all the conflict happening within the southern 
     <<set $People-=2>>
     <<set $AngryWalk to true>>
     <<set $AngryClap to true>>
+    <<CheckYarnVariable PMan>>
+    <<CheckYarnVariable CrowdG>>
+    <<CheckYarnVariable CrowdM>>
 
 //Checking the NPC for annimation script
-<<CheckYarnVariable PMan>>
-<<CheckYarnVariable CrowdG>>
-<<CheckYarnVariable CrowdM>>
+//<<CheckYarnVariable PMan>>
+//<<CheckYarnVariable CrowdG>>
+//<<CheckYarnVariable CrowdM>>
 
 <<jump Ending>>
 ===
